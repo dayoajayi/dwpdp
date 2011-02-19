@@ -11,7 +11,6 @@ _[Rr]e[Ss]harper.*
 *.sql
 *.swp
 *.swo
-local_properties.rb
 /product/docs/Help/*.*
 artifacts
 UpgradeLog.XML
