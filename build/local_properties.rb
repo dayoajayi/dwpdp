@@ -2,10 +2,8 @@ class LocalSettings
  def create_settings_dictionary()
   settings = {
   	:path_to_runtime_log4net_config => File.join(%w[artifacts log4net.config.xml]),
-  	:asp_net_worker_process => "aspnet_wp.exe",
-  	:startup_page => "DepartmentBrowser.aspx",
   	:browser_exe => File.join(ENV['SYSTEMDRIVE'],'program files','mozilla firefox','firefox.exe'),
-  	:log_file_name => "NBDNStoreLog.txt",
+  	:log_file_name => "nbdn_prep_log.txt",
   	:log_level => "DEBUG",
   	:xunit_report_file_dir => "artifacts" ,
   	:xunit_report_file_name => "test_report",

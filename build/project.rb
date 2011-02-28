@@ -5,7 +5,7 @@ class Project
     end
 
     def startup_dir
-      @startup_dir = File.join(%w[product nothinbutdotnetstore])
+      @startup_dir = File.join(%w[artifacts])
     end
 
     def specs_dir
@@ -21,7 +21,7 @@ class Project
     end
 
     def startup_config
-      @startup_config = "nothinbutdotnetstore.exe.config"
+      @startup_config = "app.config"
     end
 
     def startup_extension

@@ -33,7 +33,7 @@ class MSBuildRunner
 	def self.compile(attributes)
 		version = attributes.fetch(:clrversion, 'v4.0.30319')
 		compile_target = attributes.fetch(:compile_target, 'debug')
-    solution_file = attributes[:solution_file]
+	    solution_file = attributes[:solution_file]
 		
 		framework_dir = File.join(ENV['WINDIR'].dup, 'Microsoft.NET', 'Framework', 'v4.0.30319')
 		msbuild_file = File.join(framework_dir, 'msbuild.exe')
@@ -43,10 +43,6 @@ class MSBuildRunner
 end
 
 class String
-  def name_without_template_extension
-    return self.gsub(/\.erb/,"")
-  end
-
   def remove_template_name
     self.gsub(/\.erb/,"")
   end
@@ -80,4 +76,10 @@ class File
   end
 
 
+end
+
+class String
+  def name_without_template_extension
+    return self.gsub(/\.erb/,"")
+  end
 end
