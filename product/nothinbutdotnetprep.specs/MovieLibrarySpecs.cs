@@ -7,11 +7,12 @@ using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetprep.collections;
 using nothinbutdotnetprep.tests.utility;
 
-/* The following set of Contexts (TestFixture) are in place to specify the functionality that you need to complete for the MovieLibrary class.
+/* The following set of Context/Specification pairs are in place to specify the functionality that you need to complete for the MovieLibrary class.
  * MovieLibrary is an aggregate root for the Movie class. it exposes the ability to search,sort, and iterate over all of the movies that it aggregates.
  * The current implementation of MovieLibrary has all of its methods throwing a NotImplementedException. Your job is to get all of the Contexts and their
- it should already have so = () =>
- * familiarity with:
+ * accompanying specifications passing
+ * 
+ * This exercise will give you an opportunity to get some familiarity with the following contracts:
  * 
  *      -IEnumerable<T> - The Grandfather of all collection interfaces
  *      -IList<T>
@@ -22,29 +23,36 @@ using nothinbutdotnetprep.tests.utility;
  *      -Generics     
  * 
  * The primary goals of this exercise are to get you familiar with a couple of things:
- *      Automated Builds with powershell
  *      Unit Testing Framework (Machine.Specification)
  *      BDD Style Test Naming Syntax
- *      Fluent Assertions - You will find most of these are extension methods that live in the BDDExtensions class
+ *      Fluent Assertions - You will find most of these are extension methods that start with the name Should[NAME]
  *      Refactoring
- *      Core collection and framework interfaces and types
+ *      Core collection interfaces and types
  *      Encapsulation
+ *      
+ * The main purpose of the exercise is to give you practical exposure to some fundamental design principles that will
+ * become more important as the week progresses
+ * 
+ *      Single Responsiblity Principle
  *      Open Closed Principle
- *      Coding to Specs (Tests)
+ *      Tell Don't Ask 
+ *      Code to contracts not implementations
+ *      Favour Composition over inheritance
  *      
  *
- * As I said earlier, the tests are complete. You will just need to get the implementation working. As you progress through the exercise you will undoubtebly see areas
- * where refactoring can take place (particularly around the area of methods that don't need to be there on MovieLibrary. This is as much a design exercise as it is
- * an implementation exercise. Do your best to refactor what you end up with to the best of your abilities.
+ * The tests are complete. You will just need to get the implementation working. 
  * 
- * One other stipulation of this exercise is that Linq is not to be used!! We will explore linq options together as we go through completed solutions
- * on the first day of class. I want you to use this opportunity to see how Linq like you can get your solution in spite of not being able to use linq
- * , this just gives you another reason to flex you .net muscles!!
  * 
- * If you have any questions please do not hesitate to email me at jp@jpboodhoo.com
+ * ************** RESTRICTIONS **************************************************************************************
+ * No linq allowed - this is to force some interesting design problems to the surface
+ * You can only change the code in the following classes:
+ *          - Movie
+ *          - MovieLibrary
+ *          
+ * If you have any questions please do not hesitate to email me at jp@developwithpassion.com
  * Or give me a call at (503)213-3507
  * 
- * Develop With Passion!!
+ * Develop With Passion®!!
  */
 
 namespace nothinbutdotnetprep.specs
