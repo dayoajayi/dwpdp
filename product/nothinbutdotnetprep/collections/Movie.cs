@@ -2,7 +2,7 @@ using System;
 
 namespace nothinbutdotnetprep.collections
 {
-    public class Movie 
+    public class Movie
     {
         public string title { get; set; }
         public ProductionStudio production_studio { get; set; }
