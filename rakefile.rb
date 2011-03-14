@@ -109,10 +109,10 @@ namespace :specs do
 
   desc 'run the specs for the project'
   task :run  => [:init,:compile] do
-    Dir.glob(File.join('thirdparty','machine.specifications','*')).each do|file|
+    Dir.glob(File.join('thirdparty','developwithpassion.specifications','*')).each do|file|
       FileUtils.cp(file,'artifacts')
     end
-    sh "artifacts/mspec.exe", "--html", "#{Project.report_folder}/#{Project.name}.specs.html", "-x", "example", *([] + Project.spec_assemblies)
+    sh "artifacts/mspec-clr4.exe", "--html", "#{Project.report_folder}/#{Project.name}.specs.html", "-x", "example", *([] + Project.spec_assemblies)
   end
 end
 

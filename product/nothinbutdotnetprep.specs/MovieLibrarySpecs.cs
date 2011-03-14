@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhino;
 using Machine.Specifications;
-using Machine.Specifications.DevelopWithPassion.Extensions;
-using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetprep.collections;
 using nothinbutdotnetprep.tests.utility;
 

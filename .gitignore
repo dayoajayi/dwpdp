@@ -1,5 +1,5 @@
-obj
-bin
+product/*/obj
+product/*/bin
 *.chm
 _[Rr]e[Ss]harper.*
 *.csproj.user
