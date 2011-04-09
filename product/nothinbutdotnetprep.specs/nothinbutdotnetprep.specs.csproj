@@ -52,19 +52,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="developwithpassion.specifications">
-      <HintPath>..\..\thirdparty\developwithpassion.specifications\developwithpassion.specifications.dll</HintPath>
+      <HintPath>..\..\packages\developwithpassion.specifications.moq.0.4.0.2\lib\developwithpassion.specifications.dll</HintPath>
     </Reference>
-    <Reference Include="developwithpassion.specifications.rhino">
-      <HintPath>..\..\thirdparty\developwithpassion.specifications\developwithpassion.specifications.rhino.dll</HintPath>
+    <Reference Include="developwithpassion.specifications.moq">
+      <HintPath>..\..\packages\developwithpassion.specifications.moq.0.4.0.2\lib\developwithpassion.specifications.moq.dll</HintPath>
     </Reference>
     <Reference Include="Machine.Fakes">
-      <HintPath>..\..\thirdparty\developwithpassion.specifications\Machine.Fakes.dll</HintPath>
+      <HintPath>..\..\packages\Machine.Fakes.0.2.1.2\lib\Machine.Fakes.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
-      <HintPath>..\..\thirdparty\developwithpassion.specifications\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    <Reference Include="Machine.Fakes.Adapters.Moq">
+      <HintPath>..\..\packages\Machine.Fakes.Moq.0.2.1.2\lib\Machine.Fakes.Adapters.Moq.dll</HintPath>
     </Reference>
     <Reference Include="Machine.Specifications">
-      <HintPath>..\..\thirdparty\developwithpassion.specifications\Machine.Specifications.dll</HintPath>
+      <HintPath>..\..\packages\Machine.Specifications.0.4.9.0\lib\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -100,6 +103,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
