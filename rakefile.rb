@@ -19,6 +19,8 @@ build\tasks\deployment.rb - Packaging tasks
   end
 end
 
+Rake::Task['configure'].invoke
+
 [
   configatron.artifacts_dir,
   configatron.specs.dir
@@ -26,13 +28,8 @@ end
   CLEAN.include(item)
 end
 
-task :expand_all_template_files do
-  TemplateFiles.expand
-end
+Rake::Task['expand_all_template_files'].invoke
 
-%w[configure expand_all_template_files].each do|build_task|
-  Rake::Task[build_task].invoke
-end
 
 @project_files = FileList.new("#{configatron.source_dir}/**/*.csproj")
 
@@ -49,8 +46,6 @@ task :init  => :clean do
     configatron.artifacts_dir,
     configatron.specs.dir,
     configatron.specs.report_dir,
-    configatron.distribution.zip.dir,
-    configatron.distribution.nuget.dir
   ].each do |folder| 
     FileUtils.mkdir_p folder if ! File.exists?(folder)
   end

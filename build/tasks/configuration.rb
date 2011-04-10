@@ -19,19 +19,6 @@ task :configure do
       :assemblies => dynamic{Dir.glob("#{configatron.artifacts_dir}/*specs.dll")},
     },
 
-    :distribution => 
-    {
-      :dir => "distribution",
-      :zip =>
-      {
-        :dir => delayed{configatron.distribution.dir.join("zips")},
-      },
-      :nuget =>
-      {
-        :dir => delayed{configatron.distribution.dir.join("nuget")},
-        :key => dynamic{File.read('nuget_key') if File.readable?('nuget_key')}
-      }
-    }
   }
   configatron.configure_from_hash configs
   configatron.protect_all!
