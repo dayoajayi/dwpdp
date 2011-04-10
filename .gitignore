@@ -1,5 +1,5 @@
-product/*/obj
-product/*/bin
+source/*/obj
+source/*/bin
 *.chm
 _[Rr]e[Ss]harper.*
 *.csproj.user
@@ -11,7 +11,7 @@ _[Rr]e[Ss]harper.*
 *.sql
 *.swp
 *.swo
-/product/docs/Help/*.*
+/source/docs/Help/*.*
 artifacts
 UpgradeLog.XML
 _UpgradeReport_Files
