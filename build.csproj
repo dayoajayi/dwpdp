@@ -51,11 +51,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="build.bat" />
-    <None Include="build\build_utilities.rb" />
-    <None Include="build\local_properties.rb" />
-    <None Include="build\project.rb" />
+    <None Include="build\tasks\configuration.rb" />
+    <None Include="build\tasks\machine_specs.rb" />
+    <None Include="build\tasks\templates.rb" />
     <None Include="build\tools\Rake\bin\rake" />
-    <None Include="build\tools\Rake\filelist.rb" />
     <None Include="build\tools\Rake\lib\ruby\1.8\date.rb" />
     <None Include="build\tools\Rake\lib\ruby\1.8\date\format.rb" />
     <None Include="build\tools\Rake\lib\ruby\1.8\delegate.rb" />
@@ -151,10 +150,12 @@
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler.rb" />
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler\template.rb" />
     <None Include="build\tools\Rake\lib\ruby\site_ruby\1.8\yamler\yamler.rb" />
-    <None Include="build\tools\Rake\msbuild.rb" />
-    <None Include="build\tools\Rake\nunit.rb" />
-    <None Include="build\tools\Rake\sevenzip.rb" />
-    <None Include="build\tools\Rake\string.rb" />
+    <None Include="build\utils\configatron.rb" />
+    <None Include="build\utils\file.rb" />
+    <None Include="build\utils\msbuild_runner.rb" />
+    <None Include="build\utils\sevenzip.rb" />
+    <None Include="build\utils\string.rb" />
+    <None Include="build\utils\template_file.rb" />
     <None Include="fetch_latest" />
     <None Include="push" />
     <None Include="push_latest_work.ps1" />
