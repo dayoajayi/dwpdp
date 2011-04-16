@@ -6,25 +6,32 @@ require 'configatron'
 
 =begin Supplementary Build Files
 
-build\utils - Utilities for the build
-build\tasks\configuration.rb - Project specific configuration
-build\tasks\machine_specs.rb 
-build\tasks\deployment.rb - Packaging tasks
+build\utils - build utilities
+build\tasks\configuration.rb - project specific configuration
+build\tasks\machine_specs.rb - mspec tasks
+build\tasks\git.rb - git tasks
 
 =end 
 
-%w[utils tasks].each do|folder|
+#configuration files
+config_files = FileList.new("source/config/*.erb")
+
+task :copy_config_files do
+  config_files.each do |file|
+      [configatron.artifacts_dir,configatron.app_dir].each do|folder|
+        FileUtils.cp(file.name_without_template_extension,
+        folder.join(file.base_name_without_extension))
+      end
+  end
+end
+
+%w[utils configuration tasks].each do|folder|
   Dir.glob(File.join(File.dirname(__FILE__),"build/#{folder}/*.rb")).each do|item|
     require item
   end
 end
 
-Rake::Task['configure'].invoke
-
-[
-  configatron.artifacts_dir,
-  configatron.specs.dir
-].each do |item|
+[configatron.artifacts_dir, configatron.specs.dir].each do |item|
   CLEAN.include(item)
 end
 
@@ -33,8 +40,6 @@ Rake::Task['expand_all_template_files'].invoke
 
 @project_files = FileList.new("#{configatron.source_dir}/**/*.csproj")
 
-#configuration files
-config_files = FileList.new(File.join(configatron.source_dir,'config','*.erb')).select{|fn| ! fn.include?('app.config')}
 
 #target folders that can be run from VS
 solution_file = "solution.sln"
@@ -60,7 +65,8 @@ namespace :build do
         :switches => { :verbosity => :minimal, :target => :Build },
         :properties => {
           :Configuration => configatron.target,
-          :TrackFileAccess => false
+          :TrackFileAccess => false,
+          :PostBuildEvent => ""
         }
       }
 
@@ -72,14 +78,5 @@ namespace :build do
       end
   end
 
-  task :from_ide do
-    config_files.each do |file|
-        [configatron.artifacts_dir].each do|folder|
-          FileUtils.cp(file.name_without_template_extension,
-          folder.join(file.base_name_without_extension))
-        end
-    end
-  end
-  
   task :rebuild => ["clean","compile"]
 end
